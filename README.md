@@ -25,6 +25,8 @@ add manifest attribute main-class
 ###distributing
 activate application plugin http://www.gradle.org/docs/current/userguide/application_plugin.html
 set version property
+set project name in settings.gradle:
+`rootProject.name = 'bootstrapping-gradle-java'`
 
 ##setup eclipse project
 need eclipse gradle tools
