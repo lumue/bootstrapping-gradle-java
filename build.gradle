@@ -21,6 +21,7 @@ version = '0.1'
 mainClassName = 'gradlebootstrap.Main'
 manifest.attributes('Main-Class':'gradlebootstrap.Main')
 
+
 //dependenciesS
 repositories {
 	mavenCentral()
