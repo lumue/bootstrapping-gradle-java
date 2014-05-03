@@ -1,4 +1,4 @@
-#bootstrapping a eclipse wtp project with gradle
+#bootstrapping eclipse wtp project with gradle
 
 ##basic java bootstrap
 
@@ -8,7 +8,7 @@ create src/test/main source folder
 add a class
 use some java 8 feature (date&time api, Clock) -> error
 set jdk version
-gradle run
+`gradle run`
 
 ###testing
 refactor to extract TimeRenderer
@@ -19,7 +19,7 @@ run test
 
 
 ###running
-java -jar build/libs/gradle-eclipse-bootstrap.jar -> error
+`java -jar build/libs/gradle-eclipse-bootstrap.jar` -> error
 add manifest attribute main-class
 
 ###distributing
@@ -30,11 +30,25 @@ set version property
 need eclipse gradle tools
 
 ###generate eclipse project files
+apply eclipse plugin
+run eclipse task 
+add generated files to .gitignore
+```
+/.settings/
+/.classpath
+/.project
+```
 
-
- 
-
-
-
-
-
+###tweak generated files
+add gradle project nature to .project file generation
+```
+eclipse.project {
+  natures 'org.springsource.ide.eclipse.gradle.core.nature'
+}
+```
+add gradle specific classpath entries
+```
+eclipseClasspath {
+	containers "com.springsource.sts.gradle.classpathcontainer"
+}
+```
